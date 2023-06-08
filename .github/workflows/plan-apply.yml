@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-22.04 
 
     steps:
+      - name: setup tfsec
+        run: curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
       - name: digger run
         uses: diggerhq/digger@v0.1.12
         with:

@@ -1,7 +1,19 @@
 projects:
 - name: staging
   dir: projects/staging
+  workflow: staging_workflow
 - name: prod
-  dir: projects/staging
+  dir: projects/prod
+
 auto_merge: false
-collect_usage_data: true
+collect_usage_data: false
+
+workflows:
+  staging_workflow:
+    plan:
+      steps:
+        - init
+        - validate
+        - fmt
+        - plan
+        - run: tfsec projects/staging
