@@ -1,0 +1,7 @@
+projects:
+- name: staging
+  dir: projects/staging
+- name: prod
+  dir: projects/staging
+auto_merge: true
+collect_usage_data: true
