@@ -9,6 +9,7 @@ resource "aws_s3_bucket" "bucket" {
     Name        = "digger-demo-staging-bucket"
     Environment = "staging"
     CreatedBy = "terraform"
+    Owner = "edsoncelio"
   }
 }
 
