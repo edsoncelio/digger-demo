@@ -11,7 +11,9 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-resource "aws_s3_bucket_acl" "example" {
+ resource "aws_s3_bucket_versioning" "versioning_example" {
   bucket = aws_s3_bucket.bucket.id
-  acl    = "private"
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
