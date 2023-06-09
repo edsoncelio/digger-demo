@@ -29,8 +29,8 @@ workflows:
                           --out-file=/tmp/infracost.json
             infracost comment github --path=/tmp/infracost.json \
                                      --repo=$GITHUB_REPOSITORY \
-                                     --github-token=${{github.token}} \
-                                     --pull-request=${{github.event.pull_request.number}} \
+                                     --github-token=$GH_TOKEN \
+                                     --pull-request=$GH_PR_NUMER \
                                      --behavior=update
 
                         
