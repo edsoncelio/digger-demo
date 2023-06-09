@@ -11,15 +11,12 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04 
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       pull-requests: write
 
     steps:
-      - name: setup tfsec
-        run: curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
-
       - name: setup infracost
         run: curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
 
