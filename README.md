@@ -37,6 +37,13 @@ For this demo, there's a customized workflow called `staging_workflow` that will
 * infracost checks (and post a comment and edit for each change)
 
 ## Examples
+
+* To plan the project `projects/sandbox` in a PR:   
+`digger plan -p staging`
+
+* To apply:
+`digger apply -p staging`
+
 ### infracost comment
 <img width="910" alt="image" src="https://github.com/edsoncelio/digger-demo/assets/5833278/71a5c9fc-3db6-41c5-92a9-36ef8c17c291">
 
