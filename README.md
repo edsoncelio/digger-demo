@@ -1,6 +1,13 @@
 # digger-demo
 Demo for https://digger.dev/
 
+## Requirements to run
+* Change workflow permissions (at repo settings -> actions) to "Read and Write Permissions"
+* Add the following variables to the action secrets:
+    * AWS_ACCESS_KEY_ID: aws access key
+    * AWS_SECRET_ACCESS_KEY: aws secret key
+    * INFRACOST_API_KEY: infracost api key
+
 ## How it works
 
 This repo contains the following structure:
