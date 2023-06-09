@@ -22,7 +22,7 @@ When,
 * `digger.yml`: config file with digger configs   
 
 ## digger.yml configs
-For this demo, there's a customized setup called `staging_workflow` that will run for each PR:
+For this demo, there's a customized workflow called `staging_workflow` that will run for each PR in `projects/sandbox`:
 * init
 * validate
 * fmt
