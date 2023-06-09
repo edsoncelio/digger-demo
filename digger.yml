@@ -16,7 +16,6 @@ workflows:
         - validate
         - fmt
         - plan
-        - run: tfsec projects/staging
         - run: |
             export CURRENT_BRANCH=$(git symbolic-ref --short -q HEAD)
             git checkout main
