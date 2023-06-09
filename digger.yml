@@ -19,11 +19,11 @@ workflows:
         - run: |
             export CURRENT_BRANCH=$(git symbolic-ref --short -q HEAD)
             git checkout main
-            infracost breakdown --path=projects/staging \
+            infracost breakdown --path=. \
                               --format=json \
                               --out-file=/tmp/infracost-base.json
             git checkout $CURRENT_BRANCH
-            infracost diff --path=projects/staging \
+            infracost diff --path=. \
                           --format=json \
                           --compare-to=/tmp/infracost-base.json \
                           --out-file=/tmp/infracost.json
