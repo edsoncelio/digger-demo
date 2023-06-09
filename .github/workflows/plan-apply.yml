@@ -12,12 +12,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04 
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - name: setup tfsec
         run: curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+
+      - name: setup infracost
+        run: curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
+
       - name: digger run
-        uses: diggerhq/digger@v0.1.12
+        uses: diggerhq/digger@v0.1.18
         with:
           setup-aws: true
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -26,3 +33,4 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INFRACOST_TOKEN: ${{ secrets.INFRACOST_API_KEY }}
