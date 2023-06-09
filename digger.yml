@@ -15,7 +15,7 @@ workflows:
         - init
         - validate
         - fmt
-        - plan
+        - run: tfsec . 
         - run: |
             export CURRENT_BRANCH=$(git symbolic-ref --short -q HEAD)
             git checkout main
@@ -32,5 +32,6 @@ workflows:
                                      --github-token=$GH_TOKEN \
                                      --pull-request=$GH_PR_NUMER \
                                      --behavior=update
+        - plan
 
                         
